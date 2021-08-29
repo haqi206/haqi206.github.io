@@ -10,6 +10,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
   <!-- My CSS -->
   <link rel="stylesheet" href="style.css" />
 
@@ -52,7 +56,7 @@
   <section class="jumbotron text-center">
     <img src="img/hq.jpeg" alt="Faris Al Baihaqi" width="200" class="rounded-circle img-thumbnail" />
     <h1 class="display-4">Faris Al Baihaqi</h1>
-    <p class="lead">Student | Tech Learner</p>
+    <p class="lead"></p>
     <div class="container">
       <div class="row justify-content-center">
         <class class="col">
@@ -77,16 +81,16 @@
   <section id="about">
     <div class="container">
       <div class="row text-center">
-        <div class="col mb-4">
+        <div class="col mb-4" data-aos-duration="1150" data-aos="fade-down">
           <h2>About Me</h2>
         </div>
       </div>
       <div class="row justify-content-center fs-5">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-right" data-aos-duration="1200">
           <p>Halo. Nama saya Faris Al Baihaqi, seorang mahasiswa di Universitas Islam Indonesia yang saat ini sedang
             menetap di Yogyakarta.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
           <p>Saya memiliki pengalaman menjalani proyek IT dalam berbagai bahasa, seperti Java, PHP, Javascript, C++ dan
             sebagainya. Demo hasil proyek saya telah saya cantumkan dibawah ini.</p>
         </div>
@@ -104,13 +108,13 @@
   <section id="projects">
     <div class="container">
       <div class="row text-center mb-4">
-        <div class="col">
+        <div class="col" data-aos="zoom-in-down" data-aos-duration="1150">
           <h2>My Projects</h2>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-duration="1150">
             <img src="img/projects/1.jpg" class="card-img-top" alt="Project1" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -119,7 +123,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-duration="1150" data-aos-delay="100">
             <img src="img/projects/2.jpg" class="card-img-top" alt="Project2" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -128,7 +132,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-duration="1150" data-aos-delay="200">
             <img src="img/projects/3.jpg" class="card-img-top" alt="Project3" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -137,7 +141,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-duration="1150" data-aos-delay="300">
             <img src="img/projects/4.jpg" class="card-img-top" alt="Project4" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -146,7 +150,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-duration="1150" data-aos-delay="400">
             <img src="img/projects/5.jpg" class="card-img-top" alt="Project5" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -217,6 +221,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"></script>
+  <script>
+    gsap.registerPlugin(TextPlugin);
+    gsap.to(".lead", { duration: 2, delay: 1.5, text: "Student | Tech Learner" });
+    gsap.from(".jumbotron img", { duration: 1, rotateY: 360, opacity: 0 });
+    gsap.from(".navbar", { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+    gsap.from(".display-4", { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+  </script>
 
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwpU7d_rgNCb9IqEpRc384cDIFc7ZSc_M3yoBfqWV_HndRbVo1zpSdI-ejzQCy88iAp/exec'
